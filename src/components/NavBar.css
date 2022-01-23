@@ -1,0 +1,37 @@
+body {
+    background-color: #f8f7f2;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    margin: 15px;
+    padding-bottom: 15px;
+    border-bottom-style: double;
+    border-bottom-color: #cd9341;
+}
+
+.imgLogo {
+    width: 150px;
+    height: auto;
+}
+
+li {
+    list-style: none;
+    margin-right: 2.5rem;
+    margin-top: 30px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.menu {
+    display: flex;
+}
+
+.menuLinks {
+    color: #504f4f;
+    text-decoration: none;
+}
+
+.menuLinks:hover {
+    color: #cd9341
+}
