@@ -1,10 +1,15 @@
-import './App.css';
 import NavBar from './components/NavBar.js'
+import ItemListContainer from './components/ItemListContainer.js'
+
+//import ItemListcontainer from './components/ItemListContainer.js'
 
 function App() {
-  return (
-    <NavBar />
-  );
+    return (
+      <div>
+        <NavBar />
+        <ItemListContainer greeting="This are all our products, check them out!"/>
+      </div>
+    );
 }
 
 export default App;
