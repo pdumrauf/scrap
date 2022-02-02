@@ -1,16 +1,37 @@
-import ItemCount from './ItemCount.js'
+/*import ItemCount from './ItemCount.js';*/
+import React, { useEffect, useState } from 'react';
+import { getProducts } from '../api/products';
+import ItemList from './ItemList/ItemList';
 
 function ItemListContainer ({greeting}) {
+  const [items, setItems] = useState([]);
+  const [loading, setLoading] = useState(true)
+  
+  useEffect(() => {
+    getProducts
+    .then((response) => {
+      setItems(response)
+    })
+    .catch((err) => {
+      console.error(err);
+    })
+    .finally(() => {
+      setLoading(false)
+    })
+  }, []);
 
-  function addItems(counter) {
-    console.log('product added.')
-  }
 
   return (
-    <div>
-      <h1>{greeting}</h1>
-      <ItemCount stock={5} initial={1} onAdd={addItems} />
-    </div>
+    <>
+      {loading ? (<h2>Loading...</h2>
+      ) : (
+        <>
+          <h1>{greeting}</h1>
+          <ItemList items={items}/>
+          {/*/<ItemCount stock={5} initial={1} />*/}
+        </>
+      )}
+    </>
   );
 }
 
