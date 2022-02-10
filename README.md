@@ -2,7 +2,7 @@
 
 ![VideoGif](public/project.gif)
 
-- Scrap is not a normal stationery store. This one's dadicated to 'Scrapbooks'. Scrapbooking is a crafting and documenting activity which involves taking books with blank pages and adding photos, memorabilia, journaling, and embellishments.
+- Scrap is not a normal stationery store. This one's dedicated to 'Scrapbooks'. Scrapbooking is a crafting and documenting activity which involves taking books with blank pages and adding photos, memorabilia, journaling, and embellishments.
 
 - Photos and information were taken from the following links: https://www.shein.co.uk/ - https://www.scrapbook.com/
 
