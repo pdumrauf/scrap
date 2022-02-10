@@ -1,37 +1,41 @@
 .container {
-  width: 200px;
-  padding: 2px 16px;
-}
-.container-add-substract {
-  display: flex;
-  justify-content: space-between;
-}
+    width: 200px;
+    padding: 2px 16px;
+  }
+  .container-add-substract {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .container-add-substract button {
+    background-color: transparent;
+    border: none;
+    border-radius: 5px;
+    padding: 2px;
+    cursor: pointer;
+    font-size: 17px;
+  }
+  
+  .add {
+    background-color: #cd9341;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    padding: 5px;
+    font-size: 19px;
+    cursor: pointer;
+  }
 
-.container-add-substract button {
-  background-color: transparent;
-  border: none;
-  border-radius: 5px;
-  padding: 2px;
-  cursor: pointer;
-  font-size: 17px;
-}
-
-.add {
-  background-color: #cd9341;
-  color: white;
-  border: none;
-  border-radius: 7px;
-  padding: 5px;
-  font-size: 19px;
-  cursor: pointer;
-}
-
-.disabled {
-  background-color: #cd9341;
-  color: black;
-  border: none;
-  border-radius: 7px;
-  padding: 5px;
-  font-size: 19px;
-  opacity: 0.3;
-}
+  .add:hover {
+    background-color: #585858;
+  }
+  
+  .disabled {
+    background-color: #cd9341;
+    color: black;
+    border: none;
+    border-radius: 7px;
+    padding: 5px;
+    font-size: 19px;
+    opacity: 0.3;
+  }

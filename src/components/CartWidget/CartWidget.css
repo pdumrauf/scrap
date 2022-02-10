@@ -1,0 +1,8 @@
+.cartIcon {
+  text-decoration: none;
+  color: black;
+}
+
+.cartIcon:hover {
+  color: #cd9341;
+}

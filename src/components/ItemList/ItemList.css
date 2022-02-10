@@ -1,4 +1,20 @@
 .itemList-container {
-    display: flex;
-    justify-content: space-around;
+  display: flex;
+  justify-content: space-around;
 }
+
+.gridContainerItem {
+  display: grid;
+  grid-template-columns: 300px 300px 300px;
+  grid-template-rows: auto auto;
+  grid-column-gap: 20px;
+  grid-row-gap: 50px; }
+
+  a {
+    color: black;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: #cd9341;
+  }

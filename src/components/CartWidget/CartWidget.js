@@ -1,12 +1,12 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
+import './CartWidget.css'
 
 function CartWidget () {
   return (
-    <>
-      <FontAwesomeIcon icon={faShoppingCart} className="fa-lg"/>
-      <span>0</span>
-    </>
+    <div>
+      <FontAwesomeIcon icon={faShoppingCart} className="fa-lg cartIcon"/>
+    </div>
   );
 }
 

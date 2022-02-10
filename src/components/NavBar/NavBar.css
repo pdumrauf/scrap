@@ -34,5 +34,16 @@ li {
 }
 
 .menuLinks:hover {
-    color: #cd9341
+    color: #cd9341;
+    text-decoration:underline;
+}
+
+.menuLinks.active {
+    font-weight: bold;
+    color: #cd9341;
+    text-decoration: none;
+}
+
+.cartIcon a {
+    text-decoration: none;
 }

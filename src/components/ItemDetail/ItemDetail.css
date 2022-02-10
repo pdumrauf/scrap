@@ -1,0 +1,22 @@
+.itemContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.imgProduct {
+    width: 500px;
+    height: auto;
+}
+
+.itemContainerDetails {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 80px;
+    width: 300px;
+}
+
+.itemContainerDetails h3 {
+    color: #cd9341;
+}
