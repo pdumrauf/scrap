@@ -10,6 +10,6 @@
 
 ## For more information
 
-E-mail: dumraufp@gmail.com
-Twitter @pdumrauf
-[LinkedIn] (https://www.linkedin.com/in/pauladumrauf/)
+- E-mail: dumraufp@gmail.com
+- Twitter @pdumrauf
+- [LinkedIn] (https://www.linkedin.com/in/pauladumrauf/)
