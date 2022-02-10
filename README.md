@@ -1,4 +1,4 @@
-# E-commerce about Scrapbook/Stationery Store
+# E-commerce about Scrapbook/Stationery Store using ReactJS
 
 ![VideoGif](public/project.gif)
 
@@ -12,4 +12,4 @@
 
 - E-mail: dumraufp@gmail.com
 - Twitter @pdumrauf
-- [LinkedIn] (https://www.linkedin.com/in/pauladumrauf/)
+- LinkedIn: https://www.linkedin.com/in/pauladumrauf/
