@@ -16,7 +16,7 @@ function NavBar() {
               <li><NavLink to='/category/papers' className='menuLinks'>Papers</NavLink></li>
               <li><NavLink to='/category/pens' className='menuLinks'>Pens</NavLink></li>
               <li><NavLink to='/category/washi-tapes' className='menuLinks'>Washi tapes</NavLink></li>
-              <li><a href='#' className='cartIcon'><CartWidget /></a></li>
+              <li><NavLink to='/cart' className='cartIcon'><CartWidget /></NavLink></li>
           </ul>
         </div>
     </nav>

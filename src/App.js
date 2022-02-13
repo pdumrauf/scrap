@@ -1,6 +1,7 @@
 import NavBar from './components/NavBar/NavBar.js';
 import ItemListContainer from './components/ItemListContainer.js';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer.js';
+import Cart from './components/Cart/Cart.js'
 import { Routes, Route, Link } from 'react-router-dom';
 
 function App() {
@@ -21,6 +22,11 @@ function App() {
           <Route
             path='/product/:productId'
             element={<ItemDetailContainer />} 
+          />
+
+          <Route
+            path='/cart'
+            element={<Cart title='These are your products. Finish your purchase.'/>} 
           />
 
           {/* 404 page simulation */}
