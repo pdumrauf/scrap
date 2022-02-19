@@ -1,0 +1,38 @@
+.cartDetailContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 300px;
+}
+
+.btn-deleteItem {
+    background-color: #585858;
+    width: 50px;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    padding: 5px;
+    font-size: 19px;
+    cursor: pointer;
+}
+
+.btn-deleteItem:hover {
+    background-color: #cd4141;
+    color: white;
+}
+
+.btn-buyItem {
+    background-color: #cd9341;
+    width: 80px;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    padding: 5px;
+    font-size: 19px;
+    cursor: pointer;
+}
+
+.btn-buyItem:hover {
+    background-color: #41cd8c;
+    color: white;
+}

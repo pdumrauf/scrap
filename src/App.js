@@ -3,45 +3,47 @@ import ItemListContainer from './components/ItemListContainer.js';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer.js';
 import Cart from './components/Cart/Cart.js'
 import { Routes, Route, Link } from 'react-router-dom';
+import CartContextProvider from './context/CartContext.js';
 
 function App() {
     return (
-      <div>
-        <NavBar />
-        <Routes>
-          <Route 
-            path='/'
-            element={<ItemListContainer greeting="This are all our products, check them out!" />}
-          />
+      <CartContextProvider>
+        <div>
+          <NavBar />
+          <Routes>
+            <Route 
+              path='/'
+              element={<ItemListContainer greeting="This are all our products, check them out!" />}
+            />
 
-          <Route
-            path='/category/:categoryName'
-            element={<ItemListContainer greeting="Here are all the products in this category" />} 
-          />
+            <Route
+              path='/category/:categoryName'
+              element={<ItemListContainer greeting="Here are all the products in this category" />} 
+            />
 
-          <Route
-            path='/product/:productId'
-            element={<ItemDetailContainer />} 
-          />
+            <Route
+              path='/product/:productId'
+              element={<ItemDetailContainer />} 
+            />
 
-          <Route
-            path='/cart'
-            element={<Cart title='These are your products. Finish your purchase.'/>} 
-          />
+            <Route
+              path='/cart'
+              element={<Cart title='These are your products. Finish your purchase.'/>} 
+            />
 
-          {/* 404 page simulation */}
-          <Route
-            path='*'
-            element={
-              <div>
-                <h2>There's nothing here!</h2>
-                <Link to='/'> {'<<'} Back to home</Link>
-              </div>
-            }
-          />
-
-        </Routes>
-      </div>
+            {/* 404 page simulation */}
+            <Route
+              path='*'
+              element={
+                <div>
+                  <h2>There's nothing here!</h2>
+                  <Link to='/'> {'<<'} Back to home</Link>
+                </div>
+              }
+            />
+          </Routes>
+        </div>
+      </CartContextProvider>
     ); 
 };
 

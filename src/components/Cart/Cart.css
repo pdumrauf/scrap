@@ -1,0 +1,26 @@
+.buttonCartContainer {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    margin: 20px;
+}
+
+.btn-emptyCart {
+    background-color: #585858;
+    width: 85px;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    padding: 5px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.btn-emptyCart:hover {
+    background-color: #cd4141;
+    color: white;
+}
+
+.cartTitle {
+    color: #cd418e;
+}
