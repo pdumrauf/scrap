@@ -49,8 +49,18 @@ const CartContextProvider = ({children}) => {
         return count;
     };
 
+    //total de items en CartWidget
+    const totalItems = () => {
+        let count = 0;
+        cart.forEach((i) => {
+            count += i.amount
+        })
+        //console.log(count)
+        return count
+    };
+
     return (
-        <CartContext.Provider value = {{ cart, addToCart, emptyCart, deleteItem, totalSum }}>
+        <CartContext.Provider value = {{ cart, addToCart, emptyCart, deleteItem, totalSum, totalItems }}>
             {children}
         </CartContext.Provider>
     );
