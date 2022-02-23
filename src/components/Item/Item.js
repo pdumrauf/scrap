@@ -5,9 +5,9 @@ const Item = ({item}) => {
     return (
     <div>
         <Link to={`/product/${item.id}`}>
-            <img src={item.img} alt={item.name} className="imgItem"/>
+            <img src={item.pictureUrl} alt={item.title} className="imgItem"/>
             <div>
-                <h3>{item.name}</h3>
+                <h3>{item.title}</h3>
                 <p>$ {item.price}</p>
             </div>
         </Link>

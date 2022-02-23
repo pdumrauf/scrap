@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { getProducts } from '../api/products';
 import ItemList from './ItemList/ItemList';
-
+import { getDocs, getFirestore, collection, query, where } from 'firebase/firestore'
 
 
 function ItemListContainer ({greeting}) {
@@ -11,26 +10,27 @@ function ItemListContainer ({greeting}) {
   const { categoryName } = useParams()
   
   useEffect(() => {
-    getProducts
-    .then((response) => {
-      if(!categoryName) {
-        setItems(response)
-      } else {
-        const itemsByCategory = response.filter((item) => {
-          return item.category === categoryName;
+    const db = getFirestore();
+    const itemsCollection = collection(db, 'items');
+    
+    const q = !categoryName ? itemsCollection 
+      : query(
+      itemsCollection, 
+      where('category','==', categoryName)
+      );
+
+      getDocs(q)
+        .then((snapshot) => {
+          setItems(snapshot.docs.map((doc)=> ({ id: doc.id, ...doc.data() })));
+        })
+        .catch(err => {
+            console.log(err);
+        })
+        .finally(() => {
+            setLoading(false);
         })
 
-        setItems(itemsByCategory)
-      }
-    })
-    .catch((err) => {
-      console.error(err);
-    })
-    .finally(() => {
-      setLoading(false)
-    })
-  }, [categoryName]);
-
+    }, [categoryName]);
 
   return (
     <>
