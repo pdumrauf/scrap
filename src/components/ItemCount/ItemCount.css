@@ -39,3 +39,7 @@
     font-size: 19px;
     opacity: 0.3;
   }
+
+  button {
+    color: black;
+  }

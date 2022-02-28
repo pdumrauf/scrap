@@ -1,3 +1,11 @@
 .imgItem {
   width: 200px;
 };
+
+div h3 {
+  color: black;
+}
+
+div p {
+  color: black;
+}

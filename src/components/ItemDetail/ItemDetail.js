@@ -1,8 +1,8 @@
-import './ItemDetail.css'
-import ItemCount from '../ItemCount/ItemCount';
-import { useState, useContext } from 'react';
+import React, { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { CartContext } from '../../context/CartContext';
+import './ItemDetail.css'
+import ItemCount from '../ItemCount/ItemCount';
 
 const ItemDetail = ({product}) => {
     const [showButton, setShowButton] = useState(false);

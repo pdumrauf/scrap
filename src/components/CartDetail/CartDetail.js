@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import React, { useContext } from "react";
 import { CartContext } from "../../context/CartContext";
 import './CartDetail.css'
 
@@ -14,7 +14,6 @@ const CartDetail = ({product}) => {
             <p>${product.price * product.amount}</p>
             <div>
                 <button className="btn-deleteItem" onClick={() => deleteItem(product.id)}>X</button>
-                <button className="btn-buyItem">Buy</button>
             </div>
         </div>
     )
