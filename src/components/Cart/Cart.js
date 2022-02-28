@@ -8,6 +8,7 @@ import './Cart.css'
 
 const Cart = ({title}) => {
     const [email, setEmail] = useState('');
+    const [phoneNumber, setPhoneNumber] = useState('');
     const [emailConfirm, setEmailConfirm] = useState('')
     const [name, setName] = useState('');
     const [orderId, setOrderId] = useState('');
@@ -65,10 +66,11 @@ const Cart = ({title}) => {
                         <div className='formContainer'>
                             <form onSubmit={handleSubmit} action="">
                                 <input onChange={(e) => setName(e.target.value)} value={name} type="text" placeholder="name" />
+                                <input onChange={(e) => setPhoneNumber(e.target.value)} value={phoneNumber} type="number" placeholder="phone number" />
                                 <input onChange={(e) => setEmail(e.target.value)} value={email} type="email" placeholder="email" />
-                                <input onChange={(e) => setEmailConfirm(e.target.value)} value={emailConfirm} type="emailConfirm" placeholder="Confirm email" />
+                                <input onChange={(e) => setEmailConfirm(e.target.value)} value={emailConfirm} type="email" placeholder="Confirm email" />
                                 <div className='btnEndPurchaseContainer'>
-                                    <button className='btn-buyItem' disabled={((name === '' | email === '') | (email !== emailConfirm))}>
+                                    <button className='btn-buyItem' disabled={(name === '' | email === '' | phoneNumber === '' | (email !== emailConfirm))}>
                                         {
                                         loading
                                             ? 'Generating order....'
