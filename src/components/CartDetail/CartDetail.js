@@ -7,7 +7,7 @@ const CartDetail = ({product}) => {
     
     return (
         <div>
-            <h1>{product.title}</h1>
+            <h1 className='productTitleCart'>{product.title}</h1>
             <img src={product.pictureUrl} alt={product.title} className="imgItem"/>
             <p>{product.description}</p>
             <p>Qty: {product.amount}</p>

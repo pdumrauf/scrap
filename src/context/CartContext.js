@@ -5,16 +5,16 @@ export const CartContext = createContext([]);
 const CartContextProvider = ({children}) => {
     const [cart, setCart] = useState(() => {
         const storageData = localStorage.getItem('items');
-        return storageData ? JSON.parse(storageData) : []
+        return storageData ? JSON.parse(storageData) : [];
     });
 
     useEffect(() => {
-        window.localStorage.setItem('items', JSON.stringify(cart))
+        window.localStorage.setItem('items', JSON.stringify(cart));
     }, [cart]);
 
     const addToCart = (item, amount) => {
         if(isOnCart(item.id)) {
-            addAmount(item, amount)
+            addAmount(item, amount);
         } else {
             setCart([...cart, {...item, amount}]);
         }
@@ -53,9 +53,8 @@ const CartContextProvider = ({children}) => {
     const totalItems = () => {
         let count = 0;
         cart.forEach((i) => {
-            count += i.amount
+            count += i.amount;
         })
-        //console.log(count)
         return count
     };
 

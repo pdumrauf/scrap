@@ -1,3 +1,8 @@
+.productTitleCart {
+color: black;
+text-align: left;
+}
+
 .cartDetailContainer {
     display: flex;
     flex-direction: column;

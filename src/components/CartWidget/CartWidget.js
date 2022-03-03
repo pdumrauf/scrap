@@ -9,7 +9,7 @@ const CartWidget = () => {
   return (
     <div>
       <FontAwesomeIcon icon={faShoppingCart} className="fa-lg cartIcon"/>
-      <span>{totalItems()}</span>
+      {totalItems() === 0 ? null : <span>{totalItems()}</span>}
     </div>
   );
 }

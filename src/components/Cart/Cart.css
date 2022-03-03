@@ -5,13 +5,19 @@
     margin: 20px;
 }
 
+.totalSum {
+    font-size: 25px;
+}
 .btn-emptyCart {
+    display: flex;
+    justify-content: center;
     background-color: #585858;
     transition: background-color .5s;
-    width: 85px;
+    width: 90px;
     color: white;
     border: none;
     border-radius: 7px;
+    margin: 5px;
     padding: 5px;
     font-size: 15px;
     cursor: pointer;
@@ -22,8 +28,29 @@
     color: white;
 }
 
+.btn-checkOut {
+    display: flex;
+    justify-content: center;
+    background-color: #cd418e;
+    transition: background-color .5s;
+    width: 90px;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    margin: 5px;
+    padding: 5px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.btn-checkOut:hover {
+    background-color: #41cd80;
+    color: white;
+}
+
 .cartTitle {
     color: #cd418e;
+    text-align: center;
 }
 
 .formContainer {
