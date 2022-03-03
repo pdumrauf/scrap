@@ -8,8 +8,10 @@
 
 - Use of Fontawesome for icons since it creates a sofisticated and profesional look to the webpage: https://fontawesome.com/
 
+- Use of Canvas to create the logo: https://www.canva.com/
+
 ## For more information
 
 - E-mail: dumraufp@gmail.com
-- Twitter @pdumrauf
+- Twitter: @pdumrauf
 - LinkedIn: https://www.linkedin.com/in/pauladumrauf/
