@@ -1,9 +1,10 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { addDoc, collection } from 'firebase/firestore';
 import { db } from '../../firebase';
 import { CartContext } from '../../context/CartContext';
 import './CheckOut.css';
+import CartDetail from '../CartDetail/CartDetail';
 
 const CheckOut = ({title}) => {
     const { cart, emptyCart, totalSum } = useContext(CartContext);
@@ -14,6 +15,10 @@ const CheckOut = ({title}) => {
     });
     const [orderId, setOrderId] = useState('');
     const [loading, setLoading] = useState(false);
+
+    useEffect(() => {
+        window.scroll(0, 0)
+    }, [])
         
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -65,7 +70,7 @@ const CheckOut = ({title}) => {
             </>
         )
     };
-
+    
     return (
         <>
             <h1 className="checkOutTitle">{title}</h1>
@@ -86,6 +91,8 @@ const CheckOut = ({title}) => {
                     </div>
                 </form>
             </div>
+            <h2>Total: ${totalSum()}</h2>
+            <CartDetail />
         </>
     )
 }

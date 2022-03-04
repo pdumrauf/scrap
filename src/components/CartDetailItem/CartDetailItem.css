@@ -3,13 +3,6 @@ color: black;
 text-align: left;
 }
 
-.cartDetailContainer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 300px;
-}
-
 .btn-deleteItem {
     background-color: #cd4141;
     transition: background-color .5s;

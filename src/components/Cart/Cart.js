@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { CartContext } from '../../context/CartContext';
-import CartDetails from '../CartDetail/CartDetail';
+import CartDetail from '../CartDetail/CartDetail';
 import './Cart.css'
 
 const Cart = ({title}) => {
@@ -16,10 +16,8 @@ const Cart = ({title}) => {
                 </>
             ) : (
                 <>
-                    <>
-                        <h1 className="cartTitle">{title}</h1>
-                        {cart.map((product) => (<CartDetails product={product} key={product.id} />))}
-                    </>
+                    <h1 className="cartTitle">{title}</h1>
+                    <CartDetail hasActions/>
                     <div className='cartContainer'>
                         <div className="buttonCartContainer">
                             <span className='totalSum'>Total: ${totalSum()}</span>

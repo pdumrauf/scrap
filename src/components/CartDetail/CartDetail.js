@@ -1,21 +1,14 @@
-import React, { useContext } from "react";
+import { useContext } from 'react';
 import { CartContext } from "../../context/CartContext";
-import './CartDetail.css'
+import CartDetailItem from '../CartDetailItem/CartDetailItem'
 
-const CartDetail = ({product}) => {
-    const { deleteItem } = useContext(CartContext)
-    
-    return (
-        <div>
-            <h1 className='productTitleCart'>{product.title}</h1>
-            <img src={product.pictureUrl} alt={product.title} className="imgItem"/>
-            <p>{product.description}</p>
-            <p>Qty: {product.amount}</p>
-            <p>${product.price * product.amount}</p>
-            <div>
-                <button className="btn-deleteItem" onClick={() => deleteItem(product.id)}>X</button>
-            </div>
-        </div>
+const CartDetail = ({hasActions}) => {
+    const { cart } = useContext(CartContext)
+
+    return ( 
+        <>
+            {cart.map((product) => (<CartDetailItem product={product} hasActions={hasActions} key={product.id} />))}
+        </>
     )
 }
 
