@@ -3,19 +3,18 @@ import { Link } from 'react-router-dom';
 import { addDoc, collection } from 'firebase/firestore';
 import { db } from '../../firebase';
 import { CartContext } from '../../context/CartContext';
-import './CheckOut.css'
+import './CheckOut.css';
 
 const CheckOut = ({title}) => {
-    const { cart, emptyCart, totalSum } = useContext(CartContext)
-    const [formValue, setFormValue] = useState({
+    const { cart, emptyCart, totalSum } = useContext(CartContext);
+    const [formValues, setFormValues] = useState({
         name: '',
-        phone: '',
-        email: '',
-        emailConfirmed: ''
-    })
+        email: '', 
+        phone: ''
+    });
     const [orderId, setOrderId] = useState('');
     const [loading, setLoading] = useState(false);
-
+        
     const handleSubmit = (e) => {
         e.preventDefault();
         setLoading(true);
@@ -24,9 +23,15 @@ const CheckOut = ({title}) => {
             return { id, title, price }
         });
 
+        const buyer = { 
+            name: formValues.name, 
+            email: formValues.email, 
+            phone: formValues.phone 
+        };
+
         const newOrder = {
             date: new Date(),
-            buyer: formValue,
+            buyer: buyer,
             items: itemCart,
             total: totalSum(),
         };
@@ -44,36 +49,12 @@ const CheckOut = ({title}) => {
             });
     };
 
-    const handleNameChange = (e) => {
-        setFormValue({
-            ...formValue,
-            name: e.target.value
-        })
-    };
-
-    const handlePhoneChange = (e) => {
-        setFormValue({
-            ...formValue,
-            phone: e.target.value
-        })
-    };
-
-    const handleEmailChange = (e) => {
-        setFormValue({
-            ...formValue,
-            email: e.target.value
-        })
-    };
-    
-    const handleConfirmedEmailChange = (e) => {
-        setFormValue({
-            ...formValue,
-            emailConfirmed: e.target.value
-        })
-    };
+    const handleInputChange = (e) => {
+        setFormValues({ ...formValues, [e.target.name]: e.target.value})
+    }
     
     const disableButton = () => {
-        return (formValue.name === '' || formValue.email === '' || formValue.phone === '') || (formValue.email !== formValue.emailConfirmed) 
+        return formValues.name === '' || formValues.email === '' || formValues.phone === '' || (formValues.email !== formValues.emailConfirmed) 
     };
 
     if (orderId !== '') {
@@ -90,10 +71,10 @@ const CheckOut = ({title}) => {
             <h1 className="checkOutTitle">{title}</h1>
             <div className='formContainer'>
                 <form onSubmit={handleSubmit} action="">
-                    <input onChange={handleNameChange} type="text" placeholder="name" />
-                    <input onChange={handlePhoneChange} type="number" placeholder="phone number" />
-                    <input onChange={handleEmailChange} type="email" placeholder="email" />
-                    <input onChange={handleConfirmedEmailChange} type="email" placeholder="Confirm email" />
+                    <input onChange={handleInputChange} name='name' type="text" placeholder="name" />
+                    <input onChange={handleInputChange} name='phone' type="number" placeholder="phone number" />
+                    <input onChange={handleInputChange} name='email' type="email" placeholder="email" />
+                    <input onChange={handleInputChange} name='emailConfirmed' type="email" placeholder="confirm your email" />
                     <div className='btnEndPurchaseContainer'>
                         <button className='btn-buyItem' disabled={disableButton()}>
                             {
