@@ -2,3 +2,40 @@
     color: #cd418e;
     text-align: center;
 }
+
+.btn-buyItem {
+    background-color: #cd9341;
+    transition: background-color .5s;
+    width: 200px;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    padding: 5px;
+    font-size: 19px;
+    cursor: pointer;
+}
+
+.btn-buyItem:hover {
+    background-color: #41cd8c;
+    color: white;
+}
+
+.btn-buyItem:disabled {
+    background-color: #585858;
+    opacity: 0.3;
+}
+
+.formContainer {
+    display: flex;
+    justify-content: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+}
+
+input {
+    margin: 10px;
+}
